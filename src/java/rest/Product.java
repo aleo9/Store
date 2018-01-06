@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name LIKE :name")
     , @NamedQuery(name = "Product.findById", query = "SELECT p FROM Product p WHERE p.id = :id")
     , @NamedQuery(name = "Product.findByCategory", query = "SELECT p FROM Product p WHERE p.category = :category")
-    , @NamedQuery(name = "Product.findAllCategories", query = "SELECT p.category FROM Product p GROUP BY p.category")
+    , @NamedQuery(name = "Product.findAllCategories", query = "SELECT p FROM Product p GROUP BY p.category")
     , @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price")})
 public class Product implements Serializable {
 
@@ -56,6 +56,11 @@ public class Product implements Serializable {
         this.category = category;
         this.price = price;
     }
+    
+    public String findAllCategories() {
+        return category;
+    }
+    
 /*
     public void updateCategories(String[] categories){
         for(int i =0; i<categories.length; i++){

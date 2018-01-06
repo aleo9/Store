@@ -79,7 +79,7 @@ public class ProductFacadeREST extends AbstractFacade<Product> {
     @GET
     @Path("categories")
     @Produces({MediaType.APPLICATION_JSON})
-    public List<String> findCategories() {
+    public List<Product> findCategories() {
         return super.findCategoryList();
     } 
     

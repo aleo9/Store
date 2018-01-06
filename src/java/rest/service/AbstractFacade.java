@@ -46,7 +46,7 @@ public abstract class AbstractFacade<T> {
         return getEntityManager().createNamedQuery("Product.findByCategory").setParameter("category", category).getResultList();
     }
     
-    public List<String> findCategoryList() {
+    public List<T> findCategoryList() {
         return getEntityManager().createNamedQuery("Product.findAllCategories").getResultList();
     }
 
