@@ -39,7 +39,7 @@ public abstract class AbstractFacade<T> {
     }
     
     public List<T> findByName(String name) {
-        return getEntityManager().createNamedQuery("Product.findByName").setParameter("name", name+"%").getResultList();
+        return getEntityManager().createNamedQuery("Product.findByName").setParameter("name", "%" +name+"%").getResultList();
     }
             
     public List<T> findByCategory(String category) {
